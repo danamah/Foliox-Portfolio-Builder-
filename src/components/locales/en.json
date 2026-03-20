@@ -1,0 +1,82 @@
+{
+    "nav": {
+        "features": "Features",
+        "themes": "Themes",
+        "examples": "Examples",
+        "create": "Create Portfolio"
+    },
+    "hero": {
+        "badge": "AI-Powered Portfolio Builder",
+        "title1": "Your Portfolio,",
+        "title2": "Crafted",
+        "title3": "in Minutes",
+        "subtitle": "Build a stunning, personalized portfolio with 3 premium themes, live preview, and instant export. No code required.",
+        "cta": "Build My Portfolio",
+        "demo": "See Example",
+        "stat1": "Premium Themes",
+        "stat2": "Free to Use",
+        "stat3": "Customizable",
+        "mockupBadge": "Live Preview",
+        "feat1": {
+            "title": "3 Premium Themes",
+            "desc": "Dark luxury, Light cream, Minimalist — switch in one click"
+        },
+        "feat2": {
+            "title": "Live Preview",
+            "desc": "See your portfolio update in real-time as you type"
+        },
+        "feat3": {
+            "title": "Export & Deploy",
+            "desc": "Download a ready-to-host HTML file instantly"
+        }
+    },
+    "preview": {
+        "empty": {
+            "title": "Start filling the form",
+            "subtitle": "Your portfolio preview will appear here"
+        },
+        "sections": {
+            "about": "About",
+            "skills": "Skills",
+            "projects": "Projects"
+        },
+        "project": {
+            "untitled": "Untitled Project"
+        }
+    },
+    "builder": {
+    "title": "Build Your Portfolio",
+    "theme": "Choose Theme",
+    "personal": "Personal Info",
+    "name": "Full Name",
+    "role": "Title / Role",
+    "bio": "Bio",
+    "email": "Email",
+    "skills": "Skills",
+    "projects": "Projects",
+    "social": "Social Links",
+
+    "photo": "Photo",
+    "add": "Add",
+    "remove": "Remove",
+    "no_skills": "No skills added yet",
+    "no_projects": "No projects yet — click Add",
+    "add_image": "Add image",
+    "project_number": "Project {number}",
+    "untitled_project": "Untitled Project",
+
+    "placeholder": {
+      "name": "Dana Mahmoud",
+      "role": "Frontend Developer · UI Designer",
+      "bio": "Tell the world about yourself...",
+      "email": "dana@example.com",
+      "skills": "React, Figma...",
+      "project_title": "My Project",
+      "project_desc": "What did you build?",
+      "project_link": "https://github.com/...",
+      "github": "https://github.com/username",
+      "linkedin": "https://linkedin.com/in/username",
+      "twitter": "https://twitter.com/username"
+    }
+  }
+}

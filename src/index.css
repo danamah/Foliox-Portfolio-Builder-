@@ -1,0 +1,264 @@
+@import "tailwindcss";
+@plugin './hero.js';
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+/* ═══════════════════════════════════════════════════════════
+   FOLIOX — Design System
+   Aesthetic: Luxury Editorial · Gold × Black × Cream
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
+
+/* ── Brand Tokens ─────────────────────────────────────────── */
+@theme {
+  --color-gold-50:  #fdf8ec;
+  --color-gold-100: #f9edcc;
+  --color-gold-200: #f2d98a;
+  --color-gold-300: #e8c06a;
+  --color-gold-400: #d4a843;
+  --color-gold-500: #b8891e;
+  --color-gold-600: #8b6914;
+  --color-gold-700: #5c440c;
+  --color-gold-800: #3a2b07;
+  --color-gold-900: #1e1603;
+
+  --color-ink-50:   #f5f5f0;
+  --color-ink-100:  #e8e8e0;
+  --color-ink-200:  #c8c8bc;
+  --color-ink-300:  #a0a090;
+  --color-ink-400:  #787868;
+  --color-ink-500:  #545448;
+  --color-ink-600:  #383830;
+  --color-ink-700:  #252520;
+  --color-ink-800:  #141410;
+  --color-ink-900:  #0a0a08;
+}
+
+/* ── Light Mode ───────────────────────────────────────────── */
+:root {
+  --bg-page:     #f8f6f0;
+  --bg-card:     #ffffff;
+  --bg-surface:  #f0ede4;
+  --bg-input:    #faf8f4;
+
+  --text-primary:   #1a1a14;
+  --text-secondary: #54544a;
+  --text-muted:     #8c8c7a;
+
+  --border:      #e2ddd0;
+  --border-gold: #d4a843;
+
+  --gold:        #d4a843;
+  --gold-hover:  #b8891e;
+  --gold-glow:   rgba(212,168,67,0.25);
+  --gold-subtle: rgba(212,168,67,0.08);
+
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.08);
+  --shadow-gold:    0 0 0 1px rgba(212,168,67,0.3), 0 4px 20px rgba(212,168,67,0.15);
+  --shadow-gold-lg: 0 0 0 1px rgba(212,168,67,0.4), 0 8px 40px rgba(212,168,67,0.2);
+}
+
+/* ── Dark Mode ────────────────────────────────────────────── */
+.dark {
+  --bg-page:     #0a0a08;
+  --bg-card:     #141410;
+  --bg-surface:  #1e1e18;
+  --bg-input:    #1a1a14;
+
+  --text-primary:   #f5f5f0;
+  --text-secondary: #c8c8b4;
+  --text-muted:     #787868;
+
+  --border:      #2a2a22;
+  --border-gold: #d4a843;
+
+  --gold:        #d4a843;
+  --gold-hover:  #e8c06a;
+  --gold-glow:   rgba(212,168,67,0.2);
+  --gold-subtle: rgba(212,168,67,0.06);
+
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.4);
+  --shadow-gold:    0 0 0 1px rgba(212,168,67,0.25), 0 4px 20px rgba(212,168,67,0.1);
+  --shadow-gold-lg: 0 0 0 1px rgba(212,168,67,0.35), 0 8px 40px rgba(212,168,67,0.18);
+}
+
+/* ── Base ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: "DM Sans", system-ui, sans-serif;
+  line-height: 1.6;
+  transition: background-color 0.35s ease, color 0.35s ease;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Cormorant Garamond", "Playfair Display Variable", serif;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+::selection {
+  background: rgba(212,168,67,0.25);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #d4a843, #b8891e);
+  border-radius: 999px;
+}
+
+/* ── Semantic Utilities ───────────────────────────────────── */
+.bg-page    { background-color: var(--bg-page); }
+.bg-card    { background-color: var(--bg-card); }
+.bg-surface { background-color: var(--bg-surface); }
+
+.text-primary   { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted     { color: var(--text-muted); }
+.text-gold      { color: var(--gold); }
+
+.border-default { border-color: var(--border); }
+.border-gold    { border-color: var(--border-gold); }
+
+/* ── Gold Gradient ────────────────────────────────────────── */
+.gradient-gold {
+  background: linear-gradient(135deg, #d4a843 0%, #e8c06a 50%, #b8891e 100%);
+}
+
+.gradient-gold-text {
+  background: linear-gradient(135deg, #d4a843, #e8c06a, #b8891e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Components ───────────────────────────────────────────── */
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: linear-gradient(135deg, #d4a843, #b8891e);
+  color: #0a0a08;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.03em;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(212,168,67,0.3);
+}
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-gold-lg);
+  background: linear-gradient(135deg, #e8c06a, #d4a843);
+}
+
+.btn-outline-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.5rem;
+  background: transparent;
+  color: var(--gold);
+  font-family: "DM Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-gold);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-outline-gold:hover {
+  background: var(--gold-subtle);
+  box-shadow: var(--shadow-gold);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s ease;
+}
+.card:hover {
+  border-color: rgba(212,168,67,0.4);
+  box-shadow: var(--shadow-gold);
+}
+
+.input-foliox {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 0.625rem;
+  color: var(--text-primary);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  outline: none;
+}
+.input-foliox:focus {
+  border-color: var(--border-gold);
+  box-shadow: var(--shadow-gold);
+}
+.input-foliox::placeholder { color: var(--text-muted); }
+
+.divider-gold {
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(212,168,67,0.5) 20%,
+    rgba(212,168,67,0.8) 50%,
+    rgba(212,168,67,0.5) 80%,
+    transparent
+  );
+}
+
+.badge-gold {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.7rem;
+  background: var(--gold-subtle);
+  border: 1px solid rgba(212,168,67,0.3);
+  border-radius: 999px;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.section-label {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.glow-gold {
+  box-shadow: 0 0 30px rgba(212,168,67,0.15),
+              0 0 60px rgba(212,168,67,0.08);
+}
+
+.transition-theme {
+  transition: background-color 0.35s ease,
+              color 0.35s ease,
+              border-color 0.35s ease;
+}
