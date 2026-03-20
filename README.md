@@ -7,6 +7,7 @@
 ![HeroUI](https://img.shields.io/badge/HeroUI-2.8-7c3aed?style=flat-square)
 ![License](https://img.shields.io/badge/License-MIT-gold?style=flat-square)
 
+> Deployment: https://foliox-portfolio-builder.vercel.app/
 ---
 
 ## ✨ Features
